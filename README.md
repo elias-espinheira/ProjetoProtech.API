@@ -134,7 +134,7 @@ Deleta todos os animes do banco (exclusão física). **Somente executa se o arqu
 
 ## 📈 Prints do Swagger
 
-Adicione imagens mostrando testes dos endpoints no Swagger, como:
+### Prints dos Testes em ProjetoProtech.Tests/TestResults
 
 * Criação de anime
 * Atualização
