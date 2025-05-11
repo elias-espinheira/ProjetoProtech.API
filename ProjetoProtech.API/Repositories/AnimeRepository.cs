@@ -18,16 +18,22 @@ namespace ProjetoProtech.API.Repositories
 
         public async Task<IEnumerable<Anime>> GetAllAnimesAsync()
         {
-            return await _context.Animes.ToListAsync();
+            return await _context.Animes
+                .Where(a => a.Ativo)
+                .AsNoTracking()
+                .ToListAsync();
         }
 
         public async Task<Anime> GetAnimeByIdAsync(int id)
         {
-            return await _context.Animes.FindAsync(id);
+            return await _context.Animes
+                .AsNoTracking()
+                .FirstOrDefaultAsync(a => a.Id == id && a.Ativo);
         }
 
         public async Task CreateAnimeAsync(Anime anime)
         {
+            anime.Ativo = true;
             _context.Animes.Add(anime);
             await _context.SaveChangesAsync();
         }
@@ -43,41 +49,54 @@ namespace ProjetoProtech.API.Repositories
             var anime = await _context.Animes.FindAsync(id);
             if (anime != null)
             {
-                _context.Animes.Remove(anime);
+                anime.Ativo = false; 
+                _context.Animes.Update(anime);
                 await _context.SaveChangesAsync();
             }
         }
 
-        // Implementação do método GetAnimesAsync com filtros e paginação
         public async Task<IEnumerable<Anime>> GetAnimesAsync(string nome = null, string diretor = null, string resumo = null, int? pageNumber = 1, int? pageSize = 10)
         {
-            var query = _context.Animes.AsQueryable();
+            var query = _context.Animes
+                .Where(a => a.Ativo) 
+                .AsQueryable();
 
-            // Filtro por nome
             if (!string.IsNullOrEmpty(nome))
             {
-                query = query.Where(a => a.Nome.Contains(nome));
+                query = query.Where(a => a.Nome.ToLower().Contains(nome.ToLower()));
             }
 
-            // Filtro por diretor
             if (!string.IsNullOrEmpty(diretor))
             {
-                query = query.Where(a => a.Diretor.Contains(diretor));
+                query = query.Where(a => a.Diretor.ToLower().Contains(diretor.ToLower()));
             }
 
-            // Filtro por resumo
             if (!string.IsNullOrEmpty(resumo))
             {
-                query = query.Where(a => a.Resumo.Contains(resumo));
+                query = query.Where(a => a.Resumo.ToLower().Contains(resumo.ToLower()));
             }
 
-            // Paginação
             if (pageNumber.HasValue && pageSize.HasValue)
             {
                 query = query.Skip((pageNumber.Value - 1) * pageSize.Value).Take(pageSize.Value);
             }
 
             return await query.ToListAsync();
+        }
+
+        // apenas para usuario homologacao
+        public async Task DeleteAllAnimesAsync()
+        {
+            //string path = @"C:\TEMP\elias.txt";
+
+            //if (!File.Exists(path)) // verifica o arquivo padrao usuário elias
+            //    return;
+
+            var animes = await _context.Animes.ToListAsync();
+            _context.Animes.RemoveRange(animes);
+            await _context.SaveChangesAsync(); 
+
+            await _context.Database.ExecuteSqlRawAsync(@"ALTER SEQUENCE ""Animes_Id_seq"" RESTART WITH 1");
         }
     }
 }

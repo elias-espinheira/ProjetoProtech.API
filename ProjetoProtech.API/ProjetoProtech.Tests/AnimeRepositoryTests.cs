@@ -72,13 +72,22 @@ namespace ProjetoProtech.Tests.Repositories
             var context = await GetInMemoryDbContextAsync();
             var repo = new AnimeRepository(context);
 
-            var anime = await repo.GetAnimeByIdAsync(1);
+            var anime = new Anime
+            {
+                Nome = "Naruto",
+                Diretor = "Masashi Kishimoto",
+                Resumo = "Resumo do Naruto",
+                Ativo = true
+            };
+            await repo.CreateAnimeAsync(anime); 
+
             anime.Nome = "Naruto Shippuden";
             await repo.UpdateAnimeAsync(anime);
 
-            var updated = await repo.GetAnimeByIdAsync(1);
+            var updated = await repo.GetAnimeByIdAsync(anime.Id);
             Assert.Equal("Naruto Shippuden", updated.Nome);
         }
+
 
         [Fact]
         public async Task DeleteAnimeAsync_RemovesAnime()
