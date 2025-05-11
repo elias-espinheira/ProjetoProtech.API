@@ -2,7 +2,6 @@
 
 ### Get All
 ![Buscar Todos Animes](ProjetoProtech.API/ProjetoProtech.Tests/TestResults/Get/Get-All-Animes.png)
-
 ![Buscar Todos Animes](ProjetoProtech.API/ProjetoProtech.Tests/TestResults/Get/Get-All-Animes-Response.png)
 
 ### Get by Nome
