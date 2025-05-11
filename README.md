@@ -172,6 +172,7 @@ Deleta todos os animes do banco (exclusão física). **Somente executa se o arqu
 ### Delete
 ![Buscar Todos Animes](ProjetoProtech.API/ProjetoProtech.Tests/TestResults/Delete/Delete-AOT.png)
 
+
 ![Buscar Todos Animes](ProjetoProtech.API/ProjetoProtech.Tests/TestResults/Put/Delete-AOT-Response.png)
 
 ---
