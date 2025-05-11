@@ -107,7 +107,7 @@ namespace ProjetoProtech.Tests.Repositories
             var context = await GetInMemoryDbContextAsync();
             var repo = new AnimeRepository(context);
 
-            var result = await repo.GetAnimesAsync(nome: "Naruto", pageNumber: 1, pageSize: 1);
+            var result = await repo.GetAnimesAsync(nome: "Naruto");
             Assert.Single(result);
             Assert.Contains(result, a => a.Nome.Contains("Naruto"));
         }

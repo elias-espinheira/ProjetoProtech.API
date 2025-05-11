@@ -55,7 +55,7 @@ namespace ProjetoProtech.API.Repositories
             }
         }
 
-        public async Task<IEnumerable<Anime>> GetAnimesAsync(string nome = null, string diretor = null, string resumo = null, int? pageNumber = 1, int? pageSize = 10)
+        public async Task<IEnumerable<Anime>> GetAnimesAsync(string nome = null, string diretor = null, string resumo = null)
         {
             var query = _context.Animes
                 .Where(a => a.Ativo) 
@@ -74,11 +74,6 @@ namespace ProjetoProtech.API.Repositories
             if (!string.IsNullOrEmpty(resumo))
             {
                 query = query.Where(a => a.Resumo.ToLower().Contains(resumo.ToLower()));
-            }
-
-            if (pageNumber.HasValue && pageSize.HasValue)
-            {
-                query = query.Skip((pageNumber.Value - 1) * pageSize.Value).Take(pageSize.Value);
             }
 
             return await query.ToListAsync();

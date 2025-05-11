@@ -13,7 +13,7 @@ namespace ProjetoProtech.API.Repositories
         Task DeleteAnimeAsync(int id);
 
         // Buscar animes com filtros e paginação
-        Task<IEnumerable<Anime>> GetAnimesAsync(string nome = null, string diretor = null, string resumo = null, int? pageNumber = 1, int? pageSize = 10);
+        Task<IEnumerable<Anime>> GetAnimesAsync(string nome = null, string diretor = null, string resumo = null);
 
         // Exclusão total (hard delete) e reset de IDs (uso exclusivo para homologação)
         Task DeleteAllAnimesAsync();

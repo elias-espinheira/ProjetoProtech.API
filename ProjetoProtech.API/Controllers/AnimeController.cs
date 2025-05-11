@@ -21,11 +21,10 @@ namespace ProjetoProtech.API.Controllers
         public async Task<ActionResult<IEnumerable<Anime>>> GetAllAnimes(
             [FromQuery] string nome = null,
             [FromQuery] string diretor = null,
-            [FromQuery] string resumo = null,
-            [FromQuery] int? pageNumber = null,
-            [FromQuery] int? pageSize = null)
+            [FromQuery] string resumo = null
+           )
         {
-            var animes = await _animeRepository.GetAnimesAsync(nome, diretor, resumo, pageNumber, pageSize);
+            var animes = await _animeRepository.GetAnimesAsync(nome, diretor, resumo);
             return Ok(animes);
         }
 
