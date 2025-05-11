@@ -38,4 +38,4 @@
 ### Delete
 ![Buscar Todos Animes](ProjetoProtech.API/ProjetoProtech.Tests/TestResults/Delete/Delete-AOT.png)
 
-![Buscar Todos Animes](ProjetoProtech.API/ProjetoProtech.Tests/TestResults/Put/Delete-AOT-Response.png)
+![Buscar Todos Animes](ProjetoProtech.API/ProjetoProtech.Tests/TestResults/Delete/Delete-AOT-Response.png)
