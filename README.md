@@ -134,7 +134,8 @@ Deleta todos os animes do banco (exclusão física). **Somente executa se o arqu
 
 ## 📈 Prints do Swagger
 
-### Prints dos Testes em ProjetoProtech.Tests/TestResults
+### Get All
+![Buscar Todos Animes](ProjetoProtech.API/ProjetoProtech.Tests/TestResults/Get/Get-All-Animes.png)
 
 * Criação de anime
 * Atualização
