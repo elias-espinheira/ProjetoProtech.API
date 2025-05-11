@@ -15,8 +15,7 @@ Retorna todos os animes ativos. Suporta filtros por nome, diretor, resumo e pagi
 * `nome`: string
 * `diretor`: string
 * `resumo`: string
-* `pageNumber`: int
-* `pageSize`: int
+* `ativo`: bool
 
 ### Exemplo de resposta:
 
@@ -26,8 +25,7 @@ Retorna todos os animes ativos. Suporta filtros por nome, diretor, resumo e pagi
     "id": 1,
     "nome": "Elfen Lied",
     "resumo": "Anjos com poderes e violência psicológica.",
-    "diretor": "Mamoru Kanbe",
-    "ativo": true
+    "diretor": "Mamoru Kanbe"    "ativo": true
   }
 ]
 ```
@@ -47,8 +45,7 @@ Retorna o anime com o ID fornecido (desde que esteja ativo).
   "id": 1,
   "nome": "Mirai Nikki",
   "resumo": "Diários do futuro e sobrevivência.",
-  "diretor": "Naoto Hosoda",
-  "ativo": true
+  "diretor": "Naoto Hosoda"
 }
 ```
 
@@ -77,8 +74,7 @@ Cria um novo anime. O campo `ativo` é definido como `true` automaticamente.
   "id": 3,
   "nome": "Attack on Titan",
   "resumo": "Humanidade contra titãs.",
-  "diretor": "Tetsurō Araki",
-  "ativo": true
+  "diretor": "Tetsurō Araki"
 }
 ```
 
@@ -96,8 +92,7 @@ Atualiza os dados de um anime existente.
 {
   "nome": "Shingeki no Kyojin",
   "resumo": "Versão atualizada do resumo.",
-  "diretor": "Araki",
-  "ativo": true
+  "diretor": "Araki"
 }
 ```
 
