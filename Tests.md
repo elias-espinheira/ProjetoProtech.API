@@ -1,22 +1,41 @@
-## 📈 Prints do Swagger (Get)
+## 📈 Prints do Swagger
 
-### Get All Pesquisa
+* Criação de anime
+* Atualização
+* Consulta com filtros
+* Exclusão lógica
+
+### Get All
 ![Buscar Todos Animes](ProjetoProtech.API/ProjetoProtech.Tests/TestResults/Get/Get-All-Animes.png)
 
-### Response
 ![Buscar Todos Animes](ProjetoProtech.API/ProjetoProtech.Tests/TestResults/Get/Get-All-Animes-Response.png)
 
-### Get by Nome Pesquisa
+### Get by Nome
 ![Buscar Todos Animes](ProjetoProtech.API/ProjetoProtech.Tests/TestResults/Get/Get-By-Nome.png)
-### Response
+
 ![Buscar Todos Animes](ProjetoProtech.API/ProjetoProtech.Tests/TestResults/Get/Get-By-Nome-Response.png)
 
-### Get by Diretor Pesquisa
+### Get by Diretor
 ![Buscar Todos Animes](ProjetoProtech.API/ProjetoProtech.Tests/TestResults/Get/Get-By-Diretor.png)
-### Response
+
 ![Buscar Todos Animes](ProjetoProtech.API/ProjetoProtech.Tests/TestResults/Get/Get-By-Diretor-Response.png)
 
-### Get by Resumo Pesquisa
+### Get by Resumo
 ![Buscar Todos Animes](ProjetoProtech.API/ProjetoProtech.Tests/TestResults/Get/Get-By-Resumo.png)
-### Response
+
 ![Buscar Todos Animes](ProjetoProtech.API/ProjetoProtech.Tests/TestResults/Get/Get-By-Resumo-Response.png)
+
+### Post
+![Buscar Todos Animes](ProjetoProtech.API/ProjetoProtech.Tests/TestResults/Post/Post.png)
+
+![Buscar Todos Animes](ProjetoProtech.API/ProjetoProtech.Tests/TestResults/Post/Post-Response.png)
+
+### Put
+![Buscar Todos Animes](ProjetoProtech.API/ProjetoProtech.Tests/TestResults/Put/Put-AOT.png)
+
+![Buscar Todos Animes](ProjetoProtech.API/ProjetoProtech.Tests/TestResults/Put/Put-AOT-Response.png)
+
+### Delete
+![Buscar Todos Animes](ProjetoProtech.API/ProjetoProtech.Tests/TestResults/Delete/Delete-AOT.png)
+
+![Buscar Todos Animes](ProjetoProtech.API/ProjetoProtech.Tests/TestResults/Put/Delete-AOT-Response.png)
