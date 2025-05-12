@@ -43,4 +43,5 @@
 ## 🔧 Testes Automatizados
 
 ### Testes realizados com xUnit + EF Core InMemory:
+
 ![Teste xUnit](ProjetoProtech.API/ProjetoProtech.Tests/TestResults/xunit-passing-tests.png)
